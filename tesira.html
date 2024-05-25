@@ -1,0 +1,23 @@
+<!-- register tesira node -->
+<script type="text/javascript">
+    RED.nodes.registerType('tesira',{
+        category: 'tesira',
+        color: '#a6bbcf',
+        defaults: {
+            server: {value: "", type: "tesira-server"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-volume-high",
+        label: function() {
+            return this.name||"tesira request";
+        }
+    });
+</script>
+<!-- Define setting UI for tesira node -->
+<script type="text/html" data-template-name="tesira">
+    <div class="form-row">
+        <label><i class="fa fa-tag"></i><span>Server</span></label>
+        <input id="node-input-server">
+    </div>
+</script>
