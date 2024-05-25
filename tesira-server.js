@@ -11,7 +11,8 @@ module.exports = function(RED) {
             port: this.port
         }).then(() => {
             this.status({fill:"green",shape:"dot",text:"connected"});
-        }).catch(() => {
+        }).catch((err) => {
+            this.error(err);
             this.status({fill:"red",shape:"ring",text:"disconnected"});
         });
 
